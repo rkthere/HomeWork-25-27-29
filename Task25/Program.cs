@@ -7,20 +7,23 @@ int numberA = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите степень(В): ");
 int numberB = Convert.ToInt32(Console.ReadLine());
 
+if(numberA > 0 && numberB > 0)
+{
 int exponent(int numA, int numB)
 {
     int expo = 1;
-    if (numberA > 0 && numberB > 0)
     {
         for (int i = 1; i <= numberB; i++)
         {
             expo = expo * numA;
         }
     }
-    else
-    {
-        Console.WriteLine("Программа работает некорректно, введите числа больше 0");
-    }
     return expo;
 }
+
 Console.WriteLine($"Число {numberA} в степени {numberB} -> {exponent(numberA, numberB)}");
+}
+else
+{
+    Console.WriteLine("Введите числа больше 0 ");
+}
